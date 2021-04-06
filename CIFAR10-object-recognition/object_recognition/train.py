@@ -25,7 +25,7 @@ def main():
 
     print("Model Summary : ")
     print(model)
-
+    
     train(args, data)
     model.save(args.save_path)
 
@@ -39,7 +39,7 @@ def train(args, data):
         for i, d in enumerate(data.trainloader, 0):
 
             inputs, labels = d
-
+            inputs, labels = inputs.cuda(), labels.cuda()
             # Setting the gradients to 0
             optimizer.zero_grad()
             outputs = model(inputs)
