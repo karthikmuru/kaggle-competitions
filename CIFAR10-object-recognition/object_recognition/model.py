@@ -26,8 +26,6 @@ class Model(nn.Module):
             nn.MaxPool2d(2, 2),
 
             nn.Flatten(),
-            nn.Linear(4096, 1024),
-            nn.ReLU(),
             nn.Linear(1024, 516),
             nn.ReLU(),
             nn.Linear(516, 256),
@@ -53,4 +51,4 @@ class Model(nn.Module):
     def load(self, path):
         self.load_state_dict(torch.load(path))
 
-model = Model()
+model = Model().to("cuda")
