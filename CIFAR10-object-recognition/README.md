@@ -1,3 +1,6 @@
+Competition link : https://www.kaggle.com/c/cifar-10
+
+
 #### Training
 
 ```
